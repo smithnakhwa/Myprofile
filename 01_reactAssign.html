@@ -1,0 +1,41 @@
+
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+ <title>DOM manipulation</title>
+</head>
+
+<body>
+    <div id="root">I am CodeMind ID</div>
+    <div class="rootClass">I am CodeMind Class</div>
+    <h3>=========On change Event=========</h3>
+
+    <input type="text" name="firstName" value="" onchange="changing()">
+    <!-- <button> click Me</button> -->
+<div id="change"></div>
+ <script type="text/javascript">
+
+        function changing(){
+            document.getElementById("change").innerHTML=document.getElementsByName("firstName")[0].value;
+
+        };
+        function clickMe(){
+            document.getElementsByName('firstName')[0].value="2nd Batch";
+            document.getElementById('root').innerHTML="Hurrey changing text...!!";
+           
+
+        }
+     
+       console.log(document.getElementById('root'));
+       console.log(document.getElementsByClassName('rootClass')[1]);
+       console.log(document.getElementsByTagName('button'));
+       console.log();
+       console.log(document.querySelectorAll(".rootClass")[1]);
+
+   
+
+ </script>
+</body>
+
+</html>

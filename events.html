@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            events
+        </title>
+    </head>
+    <body onload="checkCookies()">
+        <h3 onclick="changeText(this)">click me!!!</h3>
+        <p id="demo"></p>
+        <button id="myButton">Try Me</button>
+        <p id="demo1"></p>
+        <input type="text" id="myFrame" onchange="upperCase()">
+        <h3 style="background-color: cornflowerblue;" onmouseover="min(this)" onmouseout="mout(this)">This me </h3>
+        <button onmousedown="onDown()" onclick="onClick()">Click me please</button>
+        <p id="on" style="background-color: red;">The Rose is Red</p>
+        <p id="smith"></p>
+       
+
+        
+        <script>
+             document.getElementById("myButton").addEventListener("click",displayDate)
+            function changeText (smith) {
+                smith.innerHTML="Save Me!!!"
+            }
+            function displayDate() {
+                document.getElementById("demo").innerHTML=Date();
+                
+            }
+            function checkCookies(){
+                let text="";
+                if(navigator.cookieEnabled==true)
+                {
+                    text="Cookies are enabled";
+                }
+                else{
+                    text="Cookies are not enabled"
+                }
+                document.getElementById("demo1").innerHTML=text;
+
+               
+            }
+            function upperCase(){
+                    const  x=document.getElementById("myFrame");
+                    x.value=x.value.toUpperCase();
+                }
+                function min(id){
+                    id.innerHTML="This You"
+                }
+                function mout(id){
+                    id.innerHTML="This is all We need!!"
+                }
+               
+                function onDown(){
+                    document.getElementById("on").innerHTML="The Violet's Blue";
+                    document.getElementById("on").style.backgroundColor="Blue";
+                }
+                function onClick(){
+                  
+                    document.getElementById("on").innerHTML="Sugar is Sweet And so Are You ";
+                    document.getElementById("on").style.backgroundColor="pink";
+                }
+                window.addEventListener("resize",function(){
+                    document.getElementById("smith").innerHTML=Math.random();
+                });
+        </script>
+    </body>
+</html>

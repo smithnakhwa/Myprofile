@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bubbling And Capturing</title>
+        <style>
+            #div1,#div2{
+                background-color: coral;
+                padding: 50px;
+            }
+            #p1,#p2{
+                background-color: white;
+                font-size: 20px;
+                border: 1px solid black;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>javascript addEventListener()</h2>
+        <div id="div1">
+            <h2 >Bubbling:</h2>
+            <p id="p1">Click me</p>
+        </div>
+        <div id="div2">
+            <h2>Capturing:</h2>
+            <p id="p2">Click me</p>
+        </div>
+        <script>
+            document.getElementById("p1").addEventListener("click", function() {
+              alert("You clicked the white element!");
+            }, false);
+            
+            document.getElementById("div1").addEventListener("click", function() {
+              alert("You clicked the orange element!");
+            }, false);
+            
+            document.getElementById("p2").addEventListener("click", function() {
+              alert("You clicked the white element!");
+            }, true);
+            
+            document.getElementById("div2").addEventListener("click", function() {
+              alert("You clicked the orange element!");
+            }, true);
+            
+            document.getElementById("div2").removeEventListener("click", function() {
+              alert("I m Smith");
+            }, true);
+            doc
+            </script>
+    </body>
+</html>
